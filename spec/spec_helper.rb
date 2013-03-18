@@ -11,18 +11,6 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = 'random'
-
-  config.before(:all) do
-    puts "Starting Vagrant"
-    `cd spec/; vagrant up`
-    `cd spec/; vagrant ssh -c 'cd /app; sudo nohup foreman start > /dev/null 2>&1 &'`
-  end
-
-  config.after(:all) do
-    puts "Stopping Vagrant"
-    `cd spec/; vagrant ssh -c 'sudo pkill foreman'`
-    `cd spec/; vagrant suspend`
-  end
 end
 
 Capybara.current_driver = :selenium
