@@ -19,5 +19,5 @@ Vagrant::Config.run do |config|
   SH
   config.vm.box_url = "http://dl.dropbox.com/u/1906634/heroku.box"
   config.vm.forward_port 80, 4567
-  config.vm.share_folder "app", "/tmp/app", "../"
+  config.vm.share_folder "app", "/tmp/app", "./"
 end

@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-feature "Homepage" do
-  scenario "When visiting the welcome page" do
-    visit '/'
+describe "Homepage" do
+  it "has a welcome page" do
+    get '/'
     page.should have_content "hello, world"
   end
 end

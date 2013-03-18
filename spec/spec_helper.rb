@@ -1,5 +1,8 @@
-require 'capybara/rspec'
+require 'capybara'
+require 'httparty'
 require 'vagrant'
+
+require 'support/party_dsl'
 
 RSpec.configure do |config|
   config.treat_symbols_as_metadata_keys_with_true_values = true
@@ -12,8 +15,3 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = 'random'
 end
-
-Capybara.current_driver = :selenium
-Capybara.run_server = false
-Capybara.app_host = 'http://localhost:4567'
-Capybara.default_wait_time = 2
